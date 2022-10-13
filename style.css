@@ -1,0 +1,114 @@
+* {
+    margin: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+header {
+    background-color: white;
+    color: black;
+    height: 75px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 1px 10px #888888;
+    padding: 10px;
+}
+
+.logo {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.back-arrow {
+    height: 20px;
+    margin: 8px;
+}
+
+.address {
+    margin: auto;
+    font-weight: bold;
+}
+
+.language-img {
+    height: 22px;
+    width: 22px;
+    border-radius: 50%;
+    display: block;
+    object-fit: cover;
+}
+
+.burgerMenu img {
+    height: 30px;
+    padding-top: 2px;
+}
+
+.burgerMenu img:hover {
+    background-color: #ECE9E8;
+    border-radius: 50%;
+
+}
+
+.navigation {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 40px;
+    padding-right: 30px;
+}
+
+.restaurant-img {
+    height: 220px;
+    width: 100%;
+    object-fit: cover;
+}
+
+.restaurant-logo {
+    position: absolute;
+    top: 240px;
+    width: 100%;
+}
+
+.restaurant-logo img {
+    height: 70px;
+    width: 70px;
+    background-color: white;
+    border: 1px solid lightgray;
+    border-radius: 7px;
+    padding: 5px;
+    margin-left: 20px;
+}
+
+.restaurant {
+    padding: 25px;
+}
+
+.restaurant-name {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+.review {
+    padding-top: 20px;
+}
+
+.delivery {
+    padding-top: 10px;
+}
+
+.menu-slider {
+    padding-top: 40px;
+}
+
+.info-like-btn img {
+    height: 40px;
+    width: 40px;
+    margin-left: 10px;
+    padding: 10px;
+    background-color: #ECE9E8;
+    border-radius: 50%;
+}
