@@ -5,6 +5,8 @@
     font-family: 'Roboto', sans-serif;
 }
 
+/* Header */
+
 header {
     background-color: white;
     color: black;
@@ -71,6 +73,8 @@ header {
     padding-right: 20px;
     gap: 8px;
 }
+
+/* Restaurant Section */
 
 .restaurant-img {
     height: 220px;
@@ -164,12 +168,17 @@ header {
 
 .btn-gray {
     background-color: #F5F5F5;
-    border-radius: 50%;
     transition: 300ms ease-in-out;
 }
 
 .btn-gray:hover {
     background: #EBE9E8;
+}
+
+/* Menu Slider */
+
+.menu-slider-section {
+    box-shadow: 0 8px 8px -2px rgb(27 35 36 / 8%);
 }
 
 .menu-slider-container {
@@ -178,8 +187,7 @@ header {
     gap: 8px;
     font-size: 15px;
     font-weight: 500;
-    padding-top: 40px;
-    box-shadow: 0 8px 8px -2px rgb(27 35 36 / 8%);
+    padding: 40px 0 10px 0;
     margin: 0 15px 0 15px;
 }
 
@@ -205,6 +213,7 @@ header {
 
 .menu-slider {
     display: flex;
+    /* overflow: hidden; */
 }
 
 .dish-variation {
@@ -216,6 +225,8 @@ header {
     border-radius: 25px;
     padding: 6px 10px 7px 10px;
 }
+
+/* Dish Section */
 
 .dish-section {
     padding: 25px;
@@ -253,7 +264,8 @@ header {
 }
 
 .ingridents {
-    padding: 15px 0 15px 0;
+    padding: 12px 0 12px 0;
+    font-size: 14px;
 }
 
 .dish-price {
@@ -272,4 +284,5 @@ header {
 
 .plus-btn img {
     height: 22px;
+    width: 22px;
 }
