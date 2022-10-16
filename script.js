@@ -78,30 +78,3 @@ function donerHTMLTemplate(i){
 function addToBasket() {
 
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-// ! Fixed Basket Cart on scroll down
-
-window.onscroll = function () { myFunction() };
-
-var basket = document.getElementById("basket-content");
-var sticky = basket.offsetTop;
-
-function myFunction() {
-    if (window.pageYOffset > sticky) {
-        basket.classList.add("sticky");
-    } else {
-        basket.classList.remove("sticky");
-    }
-}
