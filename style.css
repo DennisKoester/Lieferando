@@ -253,12 +253,23 @@ header {
 
 
 .dish-section {
-    padding: 25px;
+    padding: 0 25px;
+}
+
+.dish-section h3 {
+    padding-top: 20px;
+}
+
+.dish-section img {
+    height: 100px;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 12px;
 }
 
 .dish-container {
     border: 1px solid #DBD9D7;
-    border-radius: 8px;
+    border-radius: 12px;
     padding: 15px;
     margin-top: 20px;
     display: flex;
@@ -324,7 +335,6 @@ header {
     background-color: white;
     text-align: center;
 }
-
 
 .sticky {
     position: fixed;
