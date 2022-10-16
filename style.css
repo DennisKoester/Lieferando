@@ -251,6 +251,13 @@ header {
 
 /* Dish Section */
 
+#doner {
+    padding-top: 25px;
+}
+
+#lahmacun {
+    padding-top: 25px;
+}
 
 .dish-section {
     padding: 0 25px;
