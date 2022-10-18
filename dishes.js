@@ -1,5 +1,6 @@
 let doner = [
     {
+        "category": "Doner",
         "name": "Doner Kebab",
         "ingredients": "Cocktailsauce, Joghurtsauce, Hot, Tzatziki, without sauce and more.",
         "price": 6.50,
