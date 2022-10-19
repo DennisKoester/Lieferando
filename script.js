@@ -1,7 +1,7 @@
 
 function init() {
     renderAllDishes();
-    renderEmptyBasket();
+    // renderEmptyBasket();
 }
 
 
@@ -60,7 +60,7 @@ function renderBurger() {
     }
 }
 
-function addToBasket() {
+function addToBasket(dish, price) {
     let basket_dish = [];
     let basket_price = [];
     let basket_amount = [];
@@ -75,6 +75,11 @@ function addToBasket() {
     }
 }
 
+let basket_dishes = [];
+let basket_prices = [];
+let basket_amount = [];
+
 function renderFullBasket() {
 
 }
+

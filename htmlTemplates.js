@@ -5,13 +5,13 @@ function donerHTMLTemplate(i) {
     let formattedPrice = price.toFixed(2).replace('.', ',');
 
     return donerDishes.innerHTML += /*html*/ `
-    <div id="dish-container" class="dish-container" onclick="addToBasket()">
+    <div id="dish-container" class="dish-container" onclick="addToBasket(dish, price)">
         <div class="dish">
             <div class="dish-name">
                 <h4>${dish['name']}</h4>
                 <a href="">Product Info</a>
             </div>
-                <div class="ingridents">${dish['ingredients']}</div>
+                <div class="ingredients">${dish['ingredients']}</div>
                 <div class="dish-price">${formattedPrice} €</div>
             </div>
             <div class="plus-btn">
@@ -35,7 +35,7 @@ function lahmacunHTMLTemplate(i) {
                 <h4>${dish['name']}</h4>
                 <a href="">Product Info</a>
             </div>
-                <div class="ingridents">${dish['ingredients']}</div>
+                <div class="ingredients">${dish['ingredients']}</div>
                 <div class="dish-price">${formattedPrice} €</div>
             </div>
             <div class="plus-btn">
@@ -59,7 +59,7 @@ function pideHTMLTemplate(i) {
                 <h4>${dish['name']}</h4>
                 <a href="">Product Info</a>
             </div>
-                <div class="ingridents">${dish['ingredients']}</div>
+                <div class="ingredients">${dish['ingredients']}</div>
                 <div class="dish-price">${formattedPrice} €</div>
             </div>
             <div class="plus-btn">
@@ -83,7 +83,7 @@ function burgerHTMLTemplate(i) {
                 <h4>${dish['name']}</h4>
                 <a href="">Product Info</a>
             </div>
-            <div class="ingridents">${dish['ingredients']}</div>
+            <div class="ingredients">${dish['ingredients']}</div>
             <div class="dish-price">${formattedPrice} €</div>
         </div>
         <div class="plus-btn">
@@ -107,7 +107,7 @@ function saladHTMLTemplate(i) {
                 <h4>${dish['name']}</h4>
                 <a href="">Product Info</a>
             </div>
-                <div class="ingridents">${dish['ingredients']}</div>
+                <div class="ingredients">${dish['ingredients']}</div>
                 <div class="dish-price">${formattedPrice} €</div>
             </div>
             <div class="plus-btn">
@@ -125,7 +125,7 @@ function renderEmptyBasket() {
     basketContent.innerHTML = '';
 
     return basketContent.innerHTML += /*html*/ `
-    <div id="basket-content" class="basket-content">
+    <div id="empty-basket" class="basket-content">
         <h2>Shopping Cart</h2>
         <img class="basket-logo" src="img/icons8-fast-food-64.png" alt="Logo">
         <h2>Fill Your Food Cart</h2>
