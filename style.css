@@ -317,6 +317,7 @@ header {
     background-color: #F5F5F5;
     border-radius: 50%;
     cursor: pointer;
+    padding: 15px;
 }
 
 .plus-btn img {
@@ -410,6 +411,7 @@ header {
 
 .add-note {
     margin-left: 33px;
+    cursor: pointer;
 }
 
 .plus-minus-btns {
@@ -451,6 +453,7 @@ header {
     font-weight: bold;
     letter-spacing: 1px;
     color: #616f71;
+    cursor: pointer;
 }
 
 .costs {
@@ -464,7 +467,7 @@ header {
 }
 
 
-@media (max-width: 800px) {
+@media (max-width: 844px) {
     .basket {
         display: none;
     }

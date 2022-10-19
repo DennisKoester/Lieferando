@@ -1,7 +1,8 @@
 
 function init() {
     renderAllDishes();
-    // renderEmptyBasket();
+    renderEmptyBasket();
+    // renderFullBasket();
 }
 
 
@@ -60,26 +61,39 @@ function renderBurger() {
     }
 }
 
-function addToBasket(dish, price) {
-    let basket_dish = [];
-    let basket_price = [];
-    let basket_amount = [];
 
-    let index = basket_dish.indexOf('doner');
-    if (index == -1) {
-        basket_dish.push(dish)
-        basket_price.push(price)
-        basket_amount.push(amount)
-    } else {
-
-    }
-}
 
 let basket_dishes = [];
 let basket_prices = [];
-let basket_amount = [];
+let basket_amounts = [];
 
-function renderFullBasket() {
 
+function addToBasket(dish, price, amount) {
+
+    basket_dishes.push(dish);
+    basket_prices.push(price);
+    basket_amounts.push(amount);
+
+    renderFullBasket();
 }
 
+function renderFullBasket(){
+    let fullBasket = document.getElementById('basket');
+    fullBasket.innerHTML = '';
+
+
+    for (let i = 0; i < basket_dishes.length; i++) {
+        const dish = basket_dishes[i];
+        const price = basket_prices[i];
+        const amount = basket_amounts[i];
+
+        fullBasket = renderFullBasketHTML(dish, price, amount);
+    }
+}
+
+function renderEmptyBasket(){
+    let emptyBasket = document.getElementById('basket');
+    emptyBasket.innerHTML = renderEmptyBasketHTML();
+
+
+}
