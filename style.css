@@ -332,18 +332,27 @@ header {
     position: sticky;
     top: 10px;
     right: 0;
-    flex-basis: 300px;
+    flex-basis: 335px;
     flex-grow: 0;
     height: 100vh;
     background-color: transparent;
     box-shadow: -5px 8px 3px -2px rgb(27 35 36 / 15%);
-
 }
 
 .sticky {
     position: fixed;
 }
 
+.empty-basket {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.empty-basket p {
+    padding: 0 10px;
+}
 
 .basket h2 {
     padding: 20px 10px 0;
@@ -409,9 +418,16 @@ header {
     margin: 10px 0 10px 0;
 }
 
-.min-order-section,
-p {
-    font-size: 13px !important;
+.min-order-section {
+    padding: 12px 0;
+    border-bottom: 1px solid #c4c4c4;
+    margin-bottom: 10px;
+    font-size: 12px;
+    color: #616f71;
+}
+
+.min-order {
+    padding-bottom: 10px;
 }
 
 .min-order div {
@@ -437,6 +453,16 @@ p {
     color: #616f71;
 }
 
+.costs {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 10px;
+}
+
+.d-none {
+    display: none;
+}
+
 
 @media (max-width: 800px) {
     .basket {
@@ -446,7 +472,6 @@ p {
     .language-btn {
         display: none;
     }
-
 }
 
 @media (max-width: 580px) {

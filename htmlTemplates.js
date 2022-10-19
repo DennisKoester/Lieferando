@@ -125,11 +125,11 @@ function renderEmptyBasket() {
     basketContent.innerHTML = '';
 
     return basketContent.innerHTML += /*html*/ `
-    <div id="empty-basket" class="basket-content">
+    <div id="empty-basket" class="empty-basket">
         <h2>Shopping Cart</h2>
         <img class="basket-logo" src="img/icons8-fast-food-64.png" alt="Logo">
         <h2>Fill Your Food Cart</h2>
-        <p>Add some tasty dishes from the menu and order your food<p>
+        <p>Your basket is empty<p>
     </div>
     `
 }
