@@ -128,7 +128,7 @@ function renderEmptyBasketHTML() {
         <h2>Fill Your Food Cart</h2>
         <p>Your basket is empty<p>
     </div>
-    `
+    `;
 }
 
 function renderFullBasketHTML(dish, price, amount) {
@@ -182,4 +182,8 @@ function renderFullBasketHTML(dish, price, amount) {
                     </div>
                 </div>
                 <div class="checkout-btn">Checkout (7,50 €)</div>`;
+}
+
+function renderBasketItemList(){
+
 }

@@ -77,7 +77,7 @@ function addToBasket(dish, price, amount) {
     renderFullBasket();
 }
 
-function renderFullBasket(){
+function renderFullBasket() {
     let fullBasket = document.getElementById('basket');
     fullBasket.innerHTML = '';
 
@@ -87,11 +87,11 @@ function renderFullBasket(){
         const price = basket_prices[i];
         const amount = basket_amounts[i];
 
-        fullBasket = renderFullBasketHTML(dish, price, amount);
+        fullBasket.innerHTML = renderFullBasketHTML(dish, price, amount);
     }
 }
 
-function renderEmptyBasket(){
+function renderEmptyBasket() {
     let emptyBasket = document.getElementById('basket');
     emptyBasket.innerHTML = renderEmptyBasketHTML();
 
