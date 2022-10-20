@@ -169,7 +169,7 @@ header {
     width: 50px;
     cursor: pointer;
     border-radius: 50%;
-    transition: 300ms ease-in-out;
+    transition: 225ms ease-in-out;
 }
 
 .btn:hover {
@@ -179,7 +179,7 @@ header {
 
 .btn-gray {
     background-color: #F5F5F5;
-    transition: 300ms ease-in-out;
+    transition: 225ms ease-in-out;
 }
 
 .btn-gray:hover {
@@ -229,7 +229,7 @@ header {
     background-color: #F5F5F5;
     border-radius: 50%;
     cursor: pointer;
-    transition: 300ms ease-in-out;
+    transition: 225ms ease-in-out;
     margin-right: 5px;
 }
 
@@ -413,6 +413,7 @@ header {
 .add-note {
     margin-left: 33px;
     cursor: pointer;
+    color: #616f71;
 }
 
 .plus-minus-btns {
@@ -421,7 +422,7 @@ header {
     margin: 10px 0 10px 0;
 }
 
-.basket-price-section{
+.basket-price-section {
     margin-top: 10px;
     padding: 5px 0 20px;
     border-top: 1px solid #c4c4c4;

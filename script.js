@@ -19,8 +19,13 @@ function renderAllDishes() {
 function renderDoner() {
 
     for (let i = 0; i < doner.length; i++) {
+        let donerDishes = document.getElementById('doner');
+        let dishName = doner[i]['name'];
+        let ingredients = doner[i]['ingredients'];
+        let price = doner[i]['price'];
+        let formattedPrice = price.toFixed(2).replace('.', ',');
 
-        donerHTMLTemplate(i);
+        donerDishes.innerHTML += donerHTMLTemplate(i, dishName, ingredients, formattedPrice);
     }
 }
 
@@ -79,10 +84,13 @@ function renderFullBasket() {
     fullBasket.innerHTML = fullBasketHTML();
 }
 
-function addToBasket(dish, price, amount) {
+function addToBasket(i) {
+    let dishName = document.getElementById(`dishName${i}`).innerHTML;
+    let formattedPrice = document.getElementById(`formattedPrice${i}`).innerHTML;
+    let amount = 1;
 
-    basket_dishes.push(dish);
-    basket_prices.push(price);
+    basket_dishes.push(dishName);
+    basket_prices.push(formattedPrice);
     basket_amounts.push(amount);
 
     renderFullBasket();
@@ -102,7 +110,6 @@ function renderBasketItems() {
 
         basketItems.innerHTML += basketItemsHTML(dish, price, amount);
     }
-
 }
 
 function renderbasketCosts() {
