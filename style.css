@@ -231,6 +231,7 @@ header {
     cursor: pointer;
     transition: 225ms ease-in-out;
     margin-right: 5px;
+    padding: 10px;
 }
 
 .search-btn:hover {
@@ -473,7 +474,7 @@ header {
 }
 
 
-@media (max-width: 844px) {
+@media (max-width: 980px) {
     .basket {
         display: none;
     }
@@ -487,5 +488,15 @@ header {
 
     .address-container {
         display: none;
+    }
+}
+
+@media (hover: hover) {
+    .btn-gray:hover {
+        background: #EBE9E8;
+    }
+
+    .btn:hover {
+        background: #EBE9E8;
     }
 }
