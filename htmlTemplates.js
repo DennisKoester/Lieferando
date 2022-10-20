@@ -1,3 +1,5 @@
+// Dish Categorys
+
 function donerHTMLTemplate(i) {
     let donerDishes = document.getElementById('doner');
     let dish = doner[i];
@@ -118,10 +120,10 @@ function saladHTMLTemplate(i) {
 }
 
 
-// Basket
+// Basket HTML
 
-function renderEmptyBasketHTML() {
-    return`
+function emptyBasketHTML() {
+    return /*html*/`
     <div id="empty-basket" class="empty-basket">
         <h2>Basket</h2>
         <img class="basket-logo" src="img/icons8-fast-food-64.png" alt="Logo">
@@ -131,20 +133,27 @@ function renderEmptyBasketHTML() {
     `;
 }
 
-function renderFullBasketHTML(dish, price, amount) {
-    return `
-    <div id="full-basket" class="full-basket">
+function fullBasketHTML() {
+    return /*html*/`
+            <div id="full-basket" class="full-basket">
                 <h2>Basket</h2>
-                <div class="list-item">
-                    <div class="dish-basket">
-                        <div class="dish-amount">${amount}</div>
-                        <div class="name-price">
-                            <span>${dish}</span>
-                            <div class="price">${price} €</div>
-                        </div>
-                    </div>
+                <div id="items-list" class="list-item"></div>
+                <div id="basket-costs" class="basket-costs"></div>
+                <div class="checkout-btn">Checkout (7,50 €)</div>
+            </div>
+            `;
+}
 
-                    <div class="note-amount">
+function basketItemsHTML(dish, price, amount) {
+    return /*html*/`
+            <div class="dish-basket">
+                <div class="dish-amount">${amount}</div>
+                <div class="name-price">
+                    <span>${dish}</span>
+                    <div class="price">${price} €</div>
+                </div>
+            </div>
+            <div class="note-amount">
                         <div class="add-note">Add note</div>
                         <div class="plus-minus-btns">
                             <div class="plus-btn btn-gray">
@@ -155,18 +164,20 @@ function renderFullBasketHTML(dish, price, amount) {
                             </div>
                         </div>
                     </div>
-                </div>
-                
-                <div class="min-order-section">
-                    <div class="min-order">
-                        <div>
-                            <div>Amount needed to reach the minimum order value</div>
-                            <div class="min-dilivery">15,00 €</div>
-                        </div>
+                </div>`;
+}
+
+function basketCostsHTML() {
+    return /*html*/`
+                <div class="min-order">
+                    <div>
+                        <div>Amount needed to reach the minimum order value</div>
+                        <div class="min-dilivery">15,00 €</div>
                     </div>
-                    <div>Sorry, you can't order yet. The Restaurant hast set a minimum order amount of 20,00 €
-                        (excl. delievery costs)</div>
                 </div>
+                <div>Sorry, you can't order yet. The Restaurant hast set a minimum order amount of 20,00 €
+                       (excl. delievery costs)</div>
+
                 <div class="basket-price-section">
                     <div class="costs">
                         <div>Subtotal</div>
@@ -180,10 +191,5 @@ function renderFullBasketHTML(dish, price, amount) {
                         <div>Total</div>
                         <div>9,80 €</div>
                     </div>
-                </div>
-                <div class="checkout-btn">Checkout (7,50 €)</div>`;
-}
-
-function renderBasketItemList(){
-
+                </div>`;
 }

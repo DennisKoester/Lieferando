@@ -2,7 +2,6 @@
 function init() {
     renderAllDishes();
     renderEmptyBasket();
-    // renderFullBasket();
 }
 
 
@@ -62,11 +61,23 @@ function renderBurger() {
 }
 
 
+// Basket
+
 
 let basket_dishes = [];
 let basket_prices = [];
 let basket_amounts = [];
 
+
+function renderEmptyBasket() {
+    let emptyBasket = document.getElementById('basket');
+    emptyBasket.innerHTML = emptyBasketHTML();
+}
+
+function renderFullBasket() {
+    let fullBasket = document.getElementById('basket');
+    fullBasket.innerHTML = fullBasketHTML();
+}
 
 function addToBasket(dish, price, amount) {
 
@@ -75,25 +86,27 @@ function addToBasket(dish, price, amount) {
     basket_amounts.push(amount);
 
     renderFullBasket();
+    renderBasketItems();
+    renderbasketCosts();
+
 }
 
-function renderFullBasket() {
-    let fullBasket = document.getElementById('basket');
-    fullBasket.innerHTML = '';
-
+function renderBasketItems() {
+    let basketItems = document.getElementById('items-list');
+    basketItems.innerHTML = '';
 
     for (let i = 0; i < basket_dishes.length; i++) {
         const dish = basket_dishes[i];
         const price = basket_prices[i];
         const amount = basket_amounts[i];
 
-        fullBasket.innerHTML = renderFullBasketHTML(dish, price, amount);
+        basketItems.innerHTML += basketItemsHTML(dish, price, amount);
     }
+
 }
 
-function renderEmptyBasket() {
-    let emptyBasket = document.getElementById('basket');
-    emptyBasket.innerHTML = renderEmptyBasketHTML();
-
+function renderbasketCosts() {
+    let basketCosts = document.getElementById('basket-costs');
+    basketCosts.innerHTML = basketCostsHTML();
 
 }
