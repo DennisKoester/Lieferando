@@ -112,8 +112,10 @@ function renderBasketItems() {
         const dish = basket_dishes[i];
         const price = basket_prices[i];
         const amount = basket_amounts[i];
+        const calcPrice = price * amount;
+        // const calcPrice = calcPrice(price, amount);
 
-        basketItems.innerHTML += basketItemsHTML(dish, price, amount);
+        basketItems.innerHTML += basketItemsHTML(dish, calcPrice, amount);
     }
 }
 
@@ -139,10 +141,13 @@ function addToBasket(dishName, price, amount) {
     }
 }
 
+// TODO not working
+
 function calcPrice(price, amount) {
-    let calcPrice = price * amount;
-    return calcPrice
+    let result = price * amount;
+    return result
 }
+
 
 function renderBasketCosts() {
     let basketCosts = document.getElementById('basket-costs');
@@ -155,9 +160,6 @@ function renderBasketCosts() {
 //     if()
 
 // }
-
-
-
 
 
 
