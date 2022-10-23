@@ -84,7 +84,7 @@ header {
 /* Restaurant Section */
 
 .restaurant {
-    padding: 25px 25px 50px 25px;
+    padding: 25px 25px 40px 25px;
 }
 
 .restaurant-content {
@@ -194,6 +194,10 @@ header {
     box-shadow: 0 8px 8px -2px rgb(27 35 36 / 8%);
     padding-bottom: 10px;
     max-width: 100vw;
+    position: sticky;
+    top: 0;
+    background-color: white;
+    padding-top: 10px;
 }
 
 .menu-slider-container {
@@ -256,7 +260,7 @@ header {
 /* Dish Section */
 
 .dish-section {
-    padding: 0 25px;
+    padding: 0 25px 20px;
 }
 
 .dish-section h3 {
@@ -333,7 +337,7 @@ header {
 
 .basket {
     position: sticky;
-    top: 10px;
+    top: -10px;
     right: 0;
     flex-basis: 335px;
     flex-grow: 0;
@@ -358,6 +362,7 @@ header {
 }
 
 .basket h2 {
+    margin-top: 10px;
     padding: 20px 10px 0;
     font-weight: 500;
     text-align: center;
@@ -472,6 +477,37 @@ header {
 .d-none {
     display: none;
 }
+
+/* Footer */
+
+.footer-container {
+    position: relative;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    height: 130px;
+    width: 100%;
+    background-color: #262626;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    color: white;
+}
+
+.footer-links ul li {
+    display: inline-block;
+    font-size: 14px;
+    padding: 0 5px 0 5px;
+}
+
+.footer-links ul {
+    padding: 0;
+}
+
+
+/* Media Queries */
 
 
 @media (max-width: 980px) {
