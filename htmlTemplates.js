@@ -135,11 +135,11 @@ function basketItemsHTML(dish, price, amount) {
             </div>
             <div class="note-amount">
                     <div class="add-note">Add note</div>
-                    <div class="plus-minus-btns">
-                        <div class="plus-btn btn-gray">
+                    <div  class="plus-minus-btns">
+                        <div onclick="reduceAmount('${dish}', '${price}')" class="plus-btn btn-gray">
                             <img src="img/icons8-minus-48.png" alt="Minus">
                         </div>
-                        <div class="plus-btn btn-gray">
+                        <div onclick="addToBasket('${dish}', '${price}')" class="plus-btn btn-gray">
                             <img src="img/icons8-plus-48.png" alt="Minus">
                         </div>
                     </div>
@@ -160,7 +160,7 @@ function basketCostsHTML() {
             <div class="basket-price-section">
                 <div class="costs">
                     <div>Subtotal</div>
-                    <div>9.50</div>
+                    <div>9.50 €</div>
                 </div>
                 <div class="costs">
                     <div>Delivery costs</div>

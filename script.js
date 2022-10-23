@@ -118,7 +118,7 @@ function renderBasketItems() {
 }
 
 
-function addToBasket(dishName, price) {
+function addToBasket(dishName, price, amount) {
 
     let index = basket_dishes.indexOf(dishName);
 
@@ -128,15 +128,34 @@ function addToBasket(dishName, price) {
         basket_amounts.push(1);
 
         renderFullBasket();
+        renderBasketCosts();
         renderBasketItems();
-        // renderbasketCosts();
 
     } else {
         basket_amounts[index]++;
         renderFullBasket();
+        renderBasketCosts();
         renderBasketItems();
     }
 }
+
+function calcPrice(price, amount) {
+    let calcPrice = price * amount;
+    return calcPrice
+}
+
+function renderBasketCosts() {
+    let basketCosts = document.getElementById('basket-costs');
+    basketCosts.innerHTML = '';
+    basketCosts.innerHTML = basketCostsHTML();
+}
+
+
+// function reduceAmount(dishName, price) {
+//     if()
+
+// }
+
 
 
 
