@@ -115,5 +115,15 @@ function renderBasketItems() {
 function renderbasketCosts() {
     let basketCosts = document.getElementById('basket-costs');
     basketCosts.innerHTML = basketCostsHTML();
-
 }
+
+// Slide-Bar Active
+
+// function setActive() {
+//     let activeLink = document.getElementById('menu-slider').getElementsByTagName('a');
+//     for (let i = 0; i < activeLink.length; i++) {
+//         if (document.location.href.indexOf(activeLink[i].href) >= 0) {
+//             activeLink[i].classList.add("active");
+//         }
+//     }
+// }

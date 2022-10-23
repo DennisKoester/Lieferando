@@ -31,6 +31,11 @@ header {
     align-items: center;
 }
 
+.doorstep-logo {
+    height: 65px;
+    width: 100%;
+}
+
 .back-arrow {
     height: 20px;
     margin: 8px;
@@ -108,7 +113,7 @@ header {
     background-color: white;
     border: 1px solid lightgray;
     border-radius: 7px;
-    padding: 5px;
+    padding: 2px;
     margin-left: 20px;
 }
 
@@ -224,6 +229,7 @@ header {
     color: black;
 }
 
+
 .search-btn {
     display: flex;
     justify-content: center;
@@ -252,10 +258,9 @@ header {
 }
 
 .dish-variation:hover {
-    background: #f5f5f5;
+    background-color: #f5f5f5;
     border-radius: 25px;
 }
-
 
 /* Dish Section */
 
@@ -504,6 +509,10 @@ header {
 
 .footer-links ul {
     padding: 0;
+}
+
+.footer-container p {
+    color: #FF8000;
 }
 
 
