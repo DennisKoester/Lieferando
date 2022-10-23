@@ -22,9 +22,8 @@ function renderDoner() {
         let dishName = doner[i]['name'];
         let ingredients = doner[i]['ingredients'];
         let price = doner[i]['price'];
-        let formattedPrice = price.toFixed(2).replace('.', ',');
 
-        donerDishes.innerHTML += donerHTMLTemplate(i, dishName, ingredients, formattedPrice);
+        donerDishes.innerHTML += donerHTMLTemplate(i, dishName, ingredients, price);
     }
 }
 
@@ -36,9 +35,8 @@ function renderLahmacun() {
         let dishName = lahmacun[i]['name'];
         let ingredients = lahmacun[i]['ingredients'];
         let price = doner[i]['price'];
-        let formattedPrice = price.toFixed(2).replace('.', ',');
 
-        lahmacunDishes.innerHTML += lahmacunHTMLTemplate(i, dishName, ingredients, formattedPrice);
+        lahmacunDishes.innerHTML += lahmacunHTMLTemplate(i, dishName, ingredients, price);
     }
 }
 
@@ -46,17 +44,13 @@ function renderLahmacun() {
 function renderPide() {
 
     for (let i = 0; i < pide.length; i++) {
+        let pideDishes = document.getElementById('pide');
+        let dishName = pide[i]['name'];
+        let ingredients = pide[i]['ingredients'];
+        let price = pide[i]['price'];
 
-        pideHTMLTemplate(i);
-    }
-}
+        pideDishes.innerHTML += pideHTMLTemplate(i, dishName, ingredients, price);
 
-
-function renderSalad() {
-
-    for (let i = 0; i < salad.length; i++) {
-
-        saladHTMLTemplate(i);
     }
 }
 
@@ -64,11 +58,29 @@ function renderSalad() {
 function renderBurger() {
 
     for (let i = 0; i < burger.length; i++) {
+        let burgerDishes = document.getElementById('burger');
+        let dishName = burger[i]['name'];
+        let ingredients = burger[i]['ingredients'];
+        let price = burger[i]['price'];
 
-        burgerHTMLTemplate(i);
+        burgerDishes.innerHTML += burgerHTMLTemplate(i, dishName, ingredients, price);
+
     }
 }
 
+
+function renderSalad() {
+
+    for (let i = 0; i < salad.length; i++) {
+        let saladDishes = document.getElementById('salad');
+        let dishName = salad[i]['name'];
+        let ingredients = salad[i]['ingredients'];
+        let price = salad[i]['price'];
+
+        saladDishes.innerHTML += saladHTMLTemplate(i, dishName, ingredients, price);
+
+    }
+}
 
 // Basket
 
@@ -106,14 +118,13 @@ function renderBasketItems() {
 }
 
 
-function addToBasket(i) {
-    let dishName = document.getElementById(`dishName${i}`).innerHTML;
-    let formattedPrice = document.getElementById(`formattedPrice${i}`).innerHTML;
+function addToBasket(i, dishName, price) {
+
     let index = basket_dishes.indexOf(i);
 
     if (index == -1) {
         basket_dishes.push(dishName);
-        basket_prices.push(formattedPrice);
+        basket_prices.push(price);
         basket_amounts.push(1);
 
         renderFullBasket();
@@ -130,6 +141,7 @@ function renderbasketCosts() {
     let basketCosts = document.getElementById('basket-costs');
     basketCosts.innerHTML = '';
     basketCosts.innerHTML = basketCostsHTML();
+
 }
 
 

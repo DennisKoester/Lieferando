@@ -43,16 +43,16 @@ let lahmacun = [
 
 let pide = [
     {
-        "name": "Pide with minced meat and egg",
+        "name": "Pide  minced meat and egg",
         "price": 9.40
     },
     {
-        "name": "Pide with spinach and shepherd's cheese",
+        "name": "Pide spinach and cheese",
         "price": 9.40
     },
 
     {
-        "name": "Pide with sucukt and egg",
+        "name": "Pide sucuk and egg",
         "price": 9.40
     },
 ];
