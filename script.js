@@ -120,7 +120,7 @@ function renderBasketItems() {
 
 function addToBasket(i, dishName, price) {
 
-    let index = basket_dishes.indexOf(i);
+    let index = basket_dishes.indexOf(dishName);
 
     if (index == -1) {
         basket_dishes.push(dishName);
@@ -129,20 +129,20 @@ function addToBasket(i, dishName, price) {
 
         renderFullBasket();
         renderBasketItems();
-        renderbasketCosts();
+        // renderbasketCosts();
 
     } else {
         basket_amounts[index]++;
+        renderFullBasket();
+        renderBasketItems();
     }
 }
 
 
-function renderbasketCosts() {
-    let basketCosts = document.getElementById('basket-costs');
-    basketCosts.innerHTML = '';
-    basketCosts.innerHTML = basketCostsHTML();
 
-}
+// function calcSubTotal(){
+//     let subTotal = 
+// }
 
 
 // Slide-Bar Active
