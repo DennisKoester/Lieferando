@@ -23,7 +23,7 @@ function renderDoner() {
         let ingredients = doner[i]['ingredients'];
         let price = doner[i]['price'];
 
-        donerDishes.innerHTML += donerHTMLTemplate(i, dishName, ingredients, price);
+        donerDishes.innerHTML += donerHTMLTemplate(dishName, ingredients, price);
     }
 }
 
@@ -36,7 +36,7 @@ function renderLahmacun() {
         let ingredients = lahmacun[i]['ingredients'];
         let price = doner[i]['price'];
 
-        lahmacunDishes.innerHTML += lahmacunHTMLTemplate(i, dishName, ingredients, price);
+        lahmacunDishes.innerHTML += lahmacunHTMLTemplate(dishName, ingredients, price);
     }
 }
 
@@ -49,7 +49,7 @@ function renderPide() {
         let ingredients = pide[i]['ingredients'];
         let price = pide[i]['price'];
 
-        pideDishes.innerHTML += pideHTMLTemplate(i, dishName, ingredients, price);
+        pideDishes.innerHTML += pideHTMLTemplate(dishName, ingredients, price);
 
     }
 }
@@ -63,7 +63,7 @@ function renderBurger() {
         let ingredients = burger[i]['ingredients'];
         let price = burger[i]['price'];
 
-        burgerDishes.innerHTML += burgerHTMLTemplate(i, dishName, ingredients, price);
+        burgerDishes.innerHTML += burgerHTMLTemplate(dishName, ingredients, price);
 
     }
 }
@@ -77,7 +77,7 @@ function renderSalad() {
         let ingredients = salad[i]['ingredients'];
         let price = salad[i]['price'];
 
-        saladDishes.innerHTML += saladHTMLTemplate(i, dishName, ingredients, price);
+        saladDishes.innerHTML += saladHTMLTemplate(dishName, ingredients, price);
 
     }
 }
@@ -118,7 +118,7 @@ function renderBasketItems() {
 }
 
 
-function addToBasket(i, dishName, price) {
+function addToBasket(dishName, price) {
 
     let index = basket_dishes.indexOf(dishName);
 
@@ -137,6 +137,8 @@ function addToBasket(i, dishName, price) {
         renderBasketItems();
     }
 }
+
+
 
 
 

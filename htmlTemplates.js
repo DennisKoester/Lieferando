@@ -1,9 +1,9 @@
 // Dish Categorys
 
-function donerHTMLTemplate(i, dishName, ingredients, price) {
+function donerHTMLTemplate(dishName, ingredients, price) {
 
     return /*html*/ `
-    <div id="dish-container" class="dish-container" onclick="addToBasket(${i}, '${dishName}', ${price})">
+    <div id="dish-container" class="dish-container" onclick="addToBasket('${dishName}', ${price})">
         <div class="dish">
             <div class="dish-name">
                 <h4>${dishName}</h4>
@@ -20,10 +20,10 @@ function donerHTMLTemplate(i, dishName, ingredients, price) {
 }
 
 
-function lahmacunHTMLTemplate(i, dishName, ingredients, price) {
+function lahmacunHTMLTemplate(dishName, ingredients, price) {
 
     return /*html*/ `
-    <div id="dish-container" class="dish-container" onclick="addToBasket(${i}, '${dishName}', ${price})">
+    <div id="dish-container" class="dish-container" onclick="addToBasket('${dishName}', ${price})">
         <div class="dish">
             <div class="dish-name">
                 <h4>${dishName}</h4>
@@ -40,10 +40,10 @@ function lahmacunHTMLTemplate(i, dishName, ingredients, price) {
 }
 
 
-function pideHTMLTemplate(i, dishName, ingredients, price) {
+function pideHTMLTemplate(dishName, ingredients, price) {
 
     return /*html*/ `
-    <div id="dish-container" class="dish-container" onclick="addToBasket(${i}, '${dishName}', ${price})">
+    <div id="dish-container" class="dish-container" onclick="addToBasket('${dishName}', ${price})">
         <div class="dish">
             <div class="dish-name">
                 <h4>${dishName}</h4>
@@ -60,10 +60,10 @@ function pideHTMLTemplate(i, dishName, ingredients, price) {
 }
 
 
-function burgerHTMLTemplate(i, dishName, ingredients, price) {
+function burgerHTMLTemplate(dishName, ingredients, price) {
 
     return /*html*/ `
-    <div id="dish-container" class="dish-container" onclick="addToBasket(${i}, '${dishName}', ${price})">
+    <div id="dish-container" class="dish-container" onclick="addToBasket('${dishName}', ${price})">
         <div class="dish">
             <div class="dish-name">
                 <h4>${dishName}</h4>
@@ -80,10 +80,10 @@ function burgerHTMLTemplate(i, dishName, ingredients, price) {
 }
 
 
-function saladHTMLTemplate(i, dishName, ingredients, price) {
+function saladHTMLTemplate(dishName, ingredients, price) {
 
     return /*html*/ `
-    <div id="dish-container" class="dish-container" onclick="addToBasket(${i}, '${dishName}', ${price})">
+    <div id="dish-container" class="dish-container" onclick="addToBasket('${dishName}', ${price})">
         <div class="dish">
             <div class="dish-name">
                 <h4>${dishName}</h4>
