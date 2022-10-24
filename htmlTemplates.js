@@ -119,7 +119,7 @@ function fullBasketHTML() {
                 <h2>Basket</h2>
                 <div id="items-list" class="list-item"></div>
                 <div id="basket-costs" class="basket-costs"></div>
-                <div class="checkout-btn">Checkout (${totalSum(subTotal(), deliveryCosts).toFixed(2).replace('.', ',')} €)</div>
+                <div id="checkout-btn" class="checkout-btn">Checkout (${totalSum(subTotal(), deliveryCosts).toFixed(2).replace('.', ',')} €)</div>
             </div>
             `;
 }
@@ -151,10 +151,10 @@ function basketCostsHTML() {
             <div class="min-order">
                 <div>
                     <div>Amount needed to reach the minimum order value</div>
-                    <div class="min-dilivery">15,00 €</div>
+                    <div class="min-dilivery">${deliveryCostsMin.toFixed(2).replace('.', ',')} €</div>
                 </div>
             </div>
-            <div>Sorry, you can't order yet. The Restaurant hast set a minimum order amount of ${deliveryCostsMin.toFixed(2).replace('.', ',')} €
+            <div>Sorry, you can't order yet. The Restaurant has set a minimum order amount of ${deliveryCostsMin.toFixed(2).replace('.', ',')} €
                    (excl. delievery costs)</div>
 
             <div class="basket-price-section">

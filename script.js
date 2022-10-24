@@ -159,15 +159,27 @@ function subTotal() {
     for (let i = 0; i < basket_dishes.length; i++) {
         sum += basket_prices[i] * basket_amounts[i];
     }
+
+    checkCheckout(sum);
     return sum;
 }
 
 //! Calculates the total incl. deleviery costs
-function totalSum(subTotal, deliveryCosts){
+function totalSum(subTotal, deliveryCosts) {
     let total = subTotal + deliveryCosts;
 
     return total;
 }
+
+function checkCheckout(sum) {
+    checkout = document.getElementById('checkout-btn');
+
+    if (sum >= 15) {
+        checkout.style.color = "#FF8000";
+        checkout.onclick = function () { alert('blah'); };
+    }
+}
+
 
 
 // Slide-Bar Active

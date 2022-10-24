@@ -460,7 +460,7 @@ header {
     white-space: nowrap;
 }
 
-.checkout-btn {
+#checkout-btn {
     background-color: #EFEDE9;
     padding: 15px;
     border-radius: 25px;
