@@ -172,3 +172,10 @@ function basketCostsHTML() {
                 </div>
             </div>`;
 }
+
+function mobileCheckoutButtonHTML() {
+    return /*html*/`
+            Checkout (${totalSum(subTotal(),
+        deliveryCosts).toFixed(2).replace('.', ',')} €)
+            `;
+}

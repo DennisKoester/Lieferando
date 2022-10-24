@@ -188,6 +188,14 @@ function renderFullBasket() {
     renderBasket();
     renderBasketItems();
     renderBasketCosts();
+    mobileCheckoutButton();
+}
+
+
+function mobileCheckoutButton() {
+    let mobileCheckoutBtn = document.getElementById('checkout-mobile');
+    mobileCheckoutBtn.innerHTML = mobileCheckoutButtonHTML();
+    mobileCheckoutBtn.classList.remove("d-none");
 }
 
 
