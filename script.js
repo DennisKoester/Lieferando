@@ -21,9 +21,9 @@ function renderDoner() {
         let donerDishes = document.getElementById('doner');
         let dishName = doner[i]['name'];
         let ingredients = doner[i]['ingredients'];
-        let price = doner[i]['price'];
+        let pricePerAmount = doner[i]['price'];
 
-        donerDishes.innerHTML += donerHTMLTemplate(dishName, ingredients, price);
+        donerDishes.innerHTML += donerHTMLTemplate(dishName, ingredients, pricePerAmount);
     }
 }
 
@@ -34,9 +34,9 @@ function renderLahmacun() {
         let lahmacunDishes = document.getElementById('lahmacun');
         let dishName = lahmacun[i]['name'];
         let ingredients = lahmacun[i]['ingredients'];
-        let price = doner[i]['price'];
+        let pricePerAmount = doner[i]['price'];
 
-        lahmacunDishes.innerHTML += lahmacunHTMLTemplate(dishName, ingredients, price);
+        lahmacunDishes.innerHTML += lahmacunHTMLTemplate(dishName, ingredients, pricePerAmount);
     }
 }
 
@@ -47,9 +47,9 @@ function renderPide() {
         let pideDishes = document.getElementById('pide');
         let dishName = pide[i]['name'];
         let ingredients = pide[i]['ingredients'];
-        let price = pide[i]['price'];
+        let pricePerAmount = pide[i]['price'];
 
-        pideDishes.innerHTML += pideHTMLTemplate(dishName, ingredients, price);
+        pideDishes.innerHTML += pideHTMLTemplate(dishName, ingredients, pricePerAmount);
 
     }
 }
@@ -61,9 +61,9 @@ function renderBurger() {
         let burgerDishes = document.getElementById('burger');
         let dishName = burger[i]['name'];
         let ingredients = burger[i]['ingredients'];
-        let price = burger[i]['price'];
+        let pricePerAmount = burger[i]['price'];
 
-        burgerDishes.innerHTML += burgerHTMLTemplate(dishName, ingredients, price);
+        burgerDishes.innerHTML += burgerHTMLTemplate(dishName, ingredients, pricePerAmount);
 
     }
 }
@@ -75,9 +75,9 @@ function renderSalad() {
         let saladDishes = document.getElementById('salad');
         let dishName = salad[i]['name'];
         let ingredients = salad[i]['ingredients'];
-        let price = salad[i]['price'];
+        let pricePerAmount = salad[i]['price'];
 
-        saladDishes.innerHTML += saladHTMLTemplate(dishName, ingredients, price);
+        saladDishes.innerHTML += saladHTMLTemplate(dishName, ingredients, pricePerAmount);
 
     }
 }
@@ -112,10 +112,8 @@ function renderBasketItems() {
         const dish = basket_dishes[i];
         const price = basket_prices[i];
         const amount = basket_amounts[i];
-        const calcPrice = price * amount;
-        // const calcPrice = calcPrice(price, amount);
 
-        basketItems.innerHTML += basketItemsHTML(dish, calcPrice, amount);
+        basketItems.innerHTML += basketItemsHTML(dish, price, amount);
     }
 }
 
@@ -127,13 +125,13 @@ function renderBasketCosts() {
 }
 
 
-function addToBasket(dishName, price, amount) {
+function addToBasket(dishName, pricePerAmount) {
 
     let index = basket_dishes.indexOf(dishName);
 
     if (index == -1) {
         basket_dishes.push(dishName);
-        basket_prices.push(price);
+        basket_prices.push(pricePerAmount);
         basket_amounts.push(1);
 
         renderFullBasket();
@@ -148,28 +146,28 @@ function addToBasket(dishName, price, amount) {
     }
 }
 
-// TODO not working
-
-function calcPrice(price, amount) {
-    let result = price * amount;
-    return result;
+// ! Calculates the sum of dish amount and price
+function calcSum(price, amount) {
+    let calcPrice = price * amount;
+    return calcPrice;
 }
 
+//! Calculates the subtotal without the delievery costs
 function subTotal() {
-    let subTotal = '';
+    let sum = 0;
+
+    for (let i = 0; i < basket_dishes.length; i++) {
+        sum += basket_prices[i] * basket_amounts[i];
+    }
+    return sum;
 }
 
+//! Calculates the total incl. deleviery costs
+function totalSum(subTotal, deliveryCosts){
+    let total = subTotal + deliveryCosts;
 
-// function reduceAmount(dishName, price) {
-//     if()
-
-// }
-
-
-
-// function calcSubTotal(){
-//     let subTotal = 
-// }
+    return total;
+}
 
 
 // Slide-Bar Active

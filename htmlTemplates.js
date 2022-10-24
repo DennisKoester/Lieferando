@@ -1,16 +1,16 @@
 // Dish Categorys
 
-function donerHTMLTemplate(dishName, ingredients, price) {
+function donerHTMLTemplate(dishName, ingredients, pricePerAmount) {
 
     return /*html*/ `
-    <div id="dish-container" class="dish-container" onclick="addToBasket('${dishName}', ${price})">
+    <div id="dish-container" class="dish-container" onclick="addToBasket('${dishName}', ${pricePerAmount})">
         <div class="dish">
             <div class="dish-name">
                 <h4>${dishName}</h4>
                 <a href="">Product Info</a>
             </div>
                 <div class="ingredients">${ingredients}</div>
-                <div class="dish-price">${price.toFixed(2).replace('.', ',')} €</div>
+                <div class="dish-price">${pricePerAmount.toFixed(2).replace('.', ',')} €</div>
             </div>
             <div class="plus-btn">
                 <img src="img/icons8-plus-48.png" alt="Plus Button">
@@ -20,17 +20,17 @@ function donerHTMLTemplate(dishName, ingredients, price) {
 }
 
 
-function lahmacunHTMLTemplate(dishName, ingredients, price) {
+function lahmacunHTMLTemplate(dishName, ingredients, pricePerAmount) {
 
     return /*html*/ `
-    <div id="dish-container" class="dish-container" onclick="addToBasket('${dishName}', ${price})">
+    <div id="dish-container" class="dish-container" onclick="addToBasket('${dishName}', ${pricePerAmount})">
         <div class="dish">
             <div class="dish-name">
                 <h4>${dishName}</h4>
                 <a href="">Product Info</a>
             </div>
                 <div class="ingredients">${ingredients}</div>
-                <div class="dish-price">${price.toFixed(2).replace('.', ',')} €</div>
+                <div class="dish-price">${pricePerAmount.toFixed(2).replace('.', ',')} €</div>
             </div>
             <div class="plus-btn">
                 <img src="img/icons8-plus-48.png" alt="Plus Button">
@@ -40,17 +40,17 @@ function lahmacunHTMLTemplate(dishName, ingredients, price) {
 }
 
 
-function pideHTMLTemplate(dishName, ingredients, price) {
+function pideHTMLTemplate(dishName, ingredients, pricePerAmount) {
 
     return /*html*/ `
-    <div id="dish-container" class="dish-container" onclick="addToBasket('${dishName}', ${price})">
+    <div id="dish-container" class="dish-container" onclick="addToBasket('${dishName}', ${pricePerAmount})">
         <div class="dish">
             <div class="dish-name">
                 <h4>${dishName}</h4>
                 <a href="">Product Info</a>
             </div>
                 <div class="ingredients">${ingredients}</div>
-                <div class="dish-price">${price.toFixed(2).replace('.', ',')} €</div>
+                <div class="dish-price">${pricePerAmount.toFixed(2).replace('.', ',')} €</div>
             </div>
             <div class="plus-btn">
                 <img src="img/icons8-plus-48.png" alt="Plus Button">
@@ -60,17 +60,17 @@ function pideHTMLTemplate(dishName, ingredients, price) {
 }
 
 
-function burgerHTMLTemplate(dishName, ingredients, price) {
+function burgerHTMLTemplate(dishName, ingredients, pricePerAmount) {
 
     return /*html*/ `
-    <div id="dish-container" class="dish-container" onclick="addToBasket('${dishName}', ${price})">
+    <div id="dish-container" class="dish-container" onclick="addToBasket('${dishName}', ${pricePerAmount})">
         <div class="dish">
             <div class="dish-name">
                 <h4>${dishName}</h4>
                 <a href="">Product Info</a>
             </div>
             <div class="ingredients">${ingredients}</div>
-            <div class="dish-price">${price.toFixed(2).replace('.', ',')} €</div>
+            <div class="dish-price">${pricePerAmount.toFixed(2).replace('.', ',')} €</div>
         </div>
         <div class="plus-btn">
             <img src="img/icons8-plus-48.png" alt="Plus Button">
@@ -80,17 +80,17 @@ function burgerHTMLTemplate(dishName, ingredients, price) {
 }
 
 
-function saladHTMLTemplate(dishName, ingredients, price) {
+function saladHTMLTemplate(dishName, ingredients, pricePerAmount) {
 
     return /*html*/ `
-    <div id="dish-container" class="dish-container" onclick="addToBasket('${dishName}', ${price})">
+    <div id="dish-container" class="dish-container" onclick="addToBasket('${dishName}', ${pricePerAmount})">
         <div class="dish">
             <div class="dish-name">
                 <h4>${dishName}</h4>
                 <a href="">Product Info</a>
             </div>
                 <div class="ingredients">${ingredients}</div>
-                <div class="dish-price">${price.toFixed(2).replace('.', ',')} €</div>
+                <div class="dish-price">${pricePerAmount.toFixed(2).replace('.', ',')} €</div>
             </div>
             <div class="plus-btn">
                 <img src="img/icons8-plus-48.png" alt="Plus Button">
@@ -119,7 +119,7 @@ function fullBasketHTML() {
                 <h2>Basket</h2>
                 <div id="items-list" class="list-item"></div>
                 <div id="basket-costs" class="basket-costs"></div>
-                <div class="checkout-btn">Checkout (7,50 €)</div>
+                <div class="checkout-btn">Checkout (${totalSum(subTotal(), deliveryCosts).toFixed(2).replace('.', ',')} €)</div>
             </div>
             `;
 }
@@ -130,7 +130,7 @@ function basketItemsHTML(dish, price, amount) {
                 <div class="dish-amount">${amount}</div>
                 <div class="name-price">
                     <span>${dish}</span>
-                    <div class="price">${price.toFixed(2).replace('.', ',')} €</div>
+                    <div class="price">${calcSum(price, amount).toFixed(2).replace('.', ',')} €</div>
                 </div>
             </div>
             <div class="note-amount">
@@ -154,21 +154,21 @@ function basketCostsHTML() {
                     <div class="min-dilivery">15,00 €</div>
                 </div>
             </div>
-            <div>Sorry, you can't order yet. The Restaurant hast set a minimum order amount of 20,00 €
+            <div>Sorry, you can't order yet. The Restaurant hast set a minimum order amount of ${deliveryCostsMin.toFixed(2).replace('.', ',')} €
                    (excl. delievery costs)</div>
 
             <div class="basket-price-section">
                 <div class="costs">
                     <div>Subtotal</div>
-                    <div>9.50 €</div>
+                    <div>${subTotal().toFixed(2).replace('.', ',')} €</div>
                 </div>
                 <div class="costs">
                     <div>Delivery costs</div>
-                    <div id="delivery-costs">9,80 €</div>
+                    <div id="delivery-costs">${deliveryCosts.toFixed(2).replace('.', ',')} €</div>
                 </div>
                 <div class="costs" style="font-weight: bold;">
                     <div id="total">Total</div>
-                    <div>9,80 €</div>
+                    <div>${totalSum(subTotal(), deliveryCosts).toFixed(2).replace('.', ',')} €</div>
                 </div>
             </div>`;
 }
