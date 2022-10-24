@@ -32,7 +32,7 @@ header {
 
 .doorstep-logo {
     height: 65px;
-    width: 100%;
+    width: 90px;
 }
 
 .back-arrow {
@@ -460,7 +460,6 @@ header {
     font-weight: bold;
     letter-spacing: 1px;
     color: #616f71;
-    cursor: pointer;
 }
 
 .checkout-mobile {
@@ -469,6 +468,7 @@ header {
     width: 80%;
     margin: auto auto 20px auto;
     border-radius: 25px;
+    cursor: pointer;
 }
 
 .costs {

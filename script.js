@@ -207,10 +207,10 @@ function checkCheckout() {
     if (sum >= 15) {
         checkoutMobile.style.backgroundColor = "#FF8000";
         checkoutMobile.style.color = "white";
-        checkoutMobile.onclick = function () { alert('blah'); };
 
         checkout.style.backgroundColor = "#FF8000";
         checkout.style.color = "white";
+        checkout.style.cursor = "pointer";
         checkout.onclick = function () { alert('blah'); };
     }
 }
