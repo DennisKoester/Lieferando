@@ -97,7 +97,7 @@ let burger = [
     },
 
     {
-        "name": "Chickenburger XL",
+        "name": "Chickenburger",
         "price": 5.40
     },
 ]

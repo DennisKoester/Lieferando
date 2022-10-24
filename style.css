@@ -498,17 +498,26 @@ header {
     justify-content: center;
     align-items: center;
     gap: 20px;
-    color: white;
+}
+
+.footer-links ul {
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    white-space: nowrap;
 }
 
 .footer-links ul li {
     display: inline-block;
     font-size: 14px;
-    padding: 0 5px 0 5px;
+    margin: 0 5px 0 5px;
+    cursor: pointer;
 }
 
-.footer-links ul {
-    padding: 0;
+.footer-container ul li a {
+    color: white;
+    text-decoration: none;
 }
 
 .footer-container p {
@@ -534,7 +543,12 @@ header {
     .address-container {
         display: none;
     }
+
+    .dish-name h4 {
+        font-size: 15px;
+    }
 }
+
 
 @media (hover: hover) {
     .btn-gray:hover {
@@ -544,4 +558,5 @@ header {
     .btn:hover {
         background: #EBE9E8;
     }
+
 }
