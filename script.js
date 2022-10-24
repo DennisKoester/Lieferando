@@ -159,7 +159,6 @@ function subTotal() {
         sum += basket_prices[i] * basket_amounts[i];
     }
 
-    // checkCheckout(sum);
     return sum;
 }
 
@@ -188,6 +187,7 @@ function renderFullBasket() {
     renderBasket();
     renderBasketItems();
     renderBasketCosts();
+    checkCheckout();
     mobileCheckoutButton();
 }
 
@@ -199,15 +199,21 @@ function mobileCheckoutButton() {
 }
 
 
-// function checkCheckout(sum) {
-//     checkout = document.getElementById('checkout-btn');
+function checkCheckout() {
+    checkoutMobile = document.getElementById('checkout-mobile');
+    checkout = document.getElementById('checkout-btn');
+    let sum = subTotal() + deliveryCosts;
 
-//     if (sum >= 15) {
-//         checkout.style.color = "#FF8000";
-//         checkout.onclick = function () { alert('blah'); };
-//     }
-// }
+    if (sum >= 15) {
+        checkoutMobile.style.backgroundColor = "#FF8000";
+        checkoutMobile.style.color = "white";
+        checkoutMobile.onclick = function () { alert('blah'); };
 
+        checkout.style.backgroundColor = "#FF8000";
+        checkout.style.color = "white";
+        checkout.onclick = function () { alert('blah'); };
+    }
+}
 
 
 // Slide-Bar Active
