@@ -97,7 +97,7 @@ function renderEmptyBasket() {
 }
 
 
-function renderFullBasket() {
+function renderBasket() {
     let fullBasket = document.getElementById('basket');
     fullBasket.innerHTML = '';
     fullBasket.innerHTML = fullBasketHTML();
@@ -113,7 +113,7 @@ function renderBasketItems() {
         const price = basket_prices[i];
         const amount = basket_amounts[i];
 
-        basketItems.innerHTML += basketItemsHTML(dish, price, amount);
+        basketItems.innerHTML += basketItemsHTML(i, dish, price, amount);
     }
 }
 
@@ -135,14 +135,11 @@ function addToBasket(dishName, pricePerAmount) {
         basket_amounts.push(1);
 
         renderFullBasket();
-        renderBasketCosts();
-        renderBasketItems();
 
     } else {
         basket_amounts[index]++;
+
         renderFullBasket();
-        renderBasketCosts();
-        renderBasketItems();
     }
 }
 
@@ -152,6 +149,7 @@ function calcSum(price, amount) {
     return calcPrice;
 }
 
+
 //! Calculates the subtotal without the delievery costs
 function subTotal() {
     let sum = 0;
@@ -160,9 +158,9 @@ function subTotal() {
         sum += basket_prices[i] * basket_amounts[i];
     }
 
-    checkCheckout(sum);
     return sum;
 }
+
 
 //! Calculates the total incl. deleviery costs
 function totalSum(subTotal, deliveryCosts) {
@@ -171,14 +169,34 @@ function totalSum(subTotal, deliveryCosts) {
     return total;
 }
 
-function checkCheckout(sum) {
-    checkout = document.getElementById('checkout-btn');
 
-    if (sum >= 15) {
-        checkout.style.color = "#FF8000";
-        checkout.onclick = function () { alert('blah'); };
+function reduceAmount(i, amount) {
+    if (amount >= 1) {
+        basket_amounts[i]--;
+    } else {
+        basket_dishes.splice(i, 1);
+        basket_prices.splice(i, 1);
+        basket_amounts.splice(i, 1);
     }
+    renderFullBasket();
 }
+
+
+function renderFullBasket() {
+    renderBasket();
+    renderBasketItems();
+    renderBasketCosts();
+}
+
+
+// function checkCheckout(sum) {
+//     checkout = document.getElementById('checkout-btn');
+
+//     if (sum >= 15) {
+//         checkout.style.color = "#FF8000";
+//         checkout.onclick = function () { alert('blah'); };
+//     }
+// }
 
 
 

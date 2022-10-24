@@ -124,7 +124,7 @@ function fullBasketHTML() {
             `;
 }
 
-function basketItemsHTML(dish, price, amount) {
+function basketItemsHTML(i, dish, price, amount) {
     return /*html*/`
             <div class="dish-basket">
                 <div class="dish-amount">${amount}</div>
@@ -136,7 +136,7 @@ function basketItemsHTML(dish, price, amount) {
             <div class="note-amount">
                     <div class="add-note">Add note</div>
                     <div  class="plus-minus-btns">
-                        <div onclick="reduceAmount('${dish}', '${price}')" class="plus-btn btn-gray">
+                        <div onclick="reduceAmount('${i}', '${amount}')" class="plus-btn btn-gray">
                             <img src="img/icons8-minus-48.png" alt="Minus">
                         </div>
                         <div onclick="addToBasket('${dish}', '${price}')" class="plus-btn btn-gray">
