@@ -143,6 +143,7 @@ function addToBasket(dishName, pricePerAmount) {
     }
 }
 
+
 // ! Calculates the sum of dish amount and price
 function calcSum(price, amount) {
     let calcPrice = price * amount;
@@ -158,6 +159,7 @@ function subTotal() {
         sum += basket_prices[i] * basket_amounts[i];
     }
 
+    // checkCheckout(sum);
     return sum;
 }
 
