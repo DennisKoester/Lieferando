@@ -197,6 +197,12 @@ function totalSum(subTotal, deliveryCosts) {
     return total;
 }
 
+function calcDeliveryMinCosts() {
+    let calcDeliveryMinCosts = deliveryCostsMin - subTotal();
+
+    return calcDeliveryMinCosts;
+}
+
 
 function renderFullBasket() {
 
@@ -204,7 +210,7 @@ function renderFullBasket() {
         renderBasket();
         renderBasketItems();
         renderBasketCosts();
-        checkCheckout();
+        renderCheckout();
         mobileCheckoutButton();
 
     } else {
@@ -220,9 +226,10 @@ function mobileCheckoutButton() {
 }
 
 
-function checkCheckout() {
+function renderCheckout() {
     checkoutMobile = document.getElementById('checkout-mobile');
     checkout = document.getElementById('checkout-btn');
+    freedelivery = document.getElementById('delvierCostsMin');
     let sum = subTotal() + deliveryCosts;
 
     if (sum >= deliveryCostsMin) {
@@ -233,6 +240,7 @@ function checkCheckout() {
         checkout.style.color = "white";
         checkout.style.cursor = "pointer";
         checkout.onclick = function () { alert('blah'); };
+        freedelivery.classList.add("d-none");
     }
 }
 

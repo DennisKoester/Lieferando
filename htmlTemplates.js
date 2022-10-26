@@ -158,14 +158,17 @@ function basketItemsHTML(i, dish, price, amount) {
 
 function basketCostsHTML() {
     return /*html*/`
-            <div class="min-order">
-                <div>
-                    <div>Amount needed to reach the minimum order value</div>
-                    <div class="min-dilivery">${deliveryCostsMin.toFixed(2).replace('.', ',')} €</div>
+            <div id="delvierCostsMin">
+                <div class="min-order">
+                    <div class="min-dilivery">
+                        Amount needed to reach the minimum order value
+                        ${calcDeliveryMinCosts().toFixed(2).replace('.', ',')} €
+                    </div>
+                </div>
+                <div>Sorry, you can't order yet. The Restaurant has set a minimum order amount of ${deliveryCostsMin.toFixed(2).replace('.', ',')} €
+                    (excl. delievery costs).
                 </div>
             </div>
-            <div>Sorry, you can't order yet. The Restaurant has set a minimum order amount of ${deliveryCostsMin.toFixed(2).replace('.', ',')} €
-                   (excl. delievery costs)</div>
 
             <div class="basket-price-section">
                 <div class="costs">
