@@ -215,6 +215,7 @@ function renderFullBasket() {
 
     } else {
         renderEmptyBasket();
+        mobileCheckoutButton();
     }
 }
 
@@ -222,8 +223,14 @@ function renderFullBasket() {
 function mobileCheckoutButton() {
     let mobileCheckoutBtn = document.getElementById('checkout-mobile');
     mobileCheckoutBtn.innerHTML = mobileCheckoutButtonHTML();
-    mobileCheckoutBtn.classList.remove("d-none");
+
+    if (basket_dishes.length >= 1) {
+        mobileCheckoutBtn.classList.remove("d-none");
+    } else {
+        mobileCheckoutBtn.classList.add("d-none");
+    }
 }
+
 
 
 function renderCheckout() {
@@ -239,7 +246,7 @@ function renderCheckout() {
         checkout.style.backgroundColor = "#FF8000";
         checkout.style.color = "white";
         checkout.style.cursor = "pointer";
-        checkout.onclick = function () { alert('blah'); };
+        checkout.onclick = function () { alert('Test Site'); };
         freedelivery.classList.add("d-none");
     }
 }
