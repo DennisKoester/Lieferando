@@ -436,18 +436,17 @@ header {
     color: #616f71;
 }
 
-.min-order {
-    padding-bottom: 10px;
+.min-delivery {
+    width: 80%;
 }
 
-.min-order div {
+.min-order {
+    display: flex;
+    justify-content: space-between;
     background-color: #FFF9DF;
     border-radius: 8px;
-    padding: 8px;
-}
-
-.min-dilivery {
-    white-space: nowrap;
+    padding: 10px;
+    margin-bottom: 10px;
 }
 
 .checkout-btn {

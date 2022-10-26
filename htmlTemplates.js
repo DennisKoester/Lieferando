@@ -160,10 +160,8 @@ function basketCostsHTML() {
     return /*html*/`
             <div id="delvierCostsMin">
                 <div class="min-order">
-                    <div class="min-dilivery">
-                        Amount needed to reach the minimum order value
-                        ${calcDeliveryMinCosts().toFixed(2).replace('.', ',')} €
-                    </div>
+                    <div class="min-delivery">Amount needed to reach the minimum order value</div>
+                    <div class="min-delivery-sum">${calcDeliveryMinCosts().toFixed(2).replace('.', ',')} €</div>
                 </div>
                 <div>Sorry, you can't order yet. The Restaurant has set a minimum order amount of ${deliveryCostsMin.toFixed(2).replace('.', ',')} €
                     (excl. delievery costs).
