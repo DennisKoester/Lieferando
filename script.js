@@ -1,4 +1,19 @@
-function init() {
+async function includeHTML() {
+    let includeElements = document.querySelectorAll('[w3-include-html]');
+    for (let i = 0; i < includeElements.length; i++) {
+        const element = includeElements[i];
+        file = element.getAttribute("w3-include-html"); // "includes/header.html"
+        let resp = await fetch(file);
+        if (resp.ok) {
+            element.innerHTML = await resp.text();
+        } else {
+            element.innerHTML = 'Page not found';
+        }
+    }
+}
+
+async function init() {
+    await includeHTML();
     renderAllDishes();
     renderEmptyBasket();
 }
@@ -144,6 +159,18 @@ function addToBasket(dishName, pricePerAmount) {
 }
 
 
+function reduceAmount(i, amount) {
+    if (amount >= 2) {
+        basket_amounts[i]--;
+    } else {
+        basket_dishes.splice(i, 1);
+        basket_prices.splice(i, 1);
+        basket_amounts.splice(i, 1);
+    }
+    renderFullBasket();
+}
+
+
 // ! Calculates the sum of dish amount and price
 function calcSum(price, amount) {
     let calcPrice = price * amount;
@@ -171,24 +198,18 @@ function totalSum(subTotal, deliveryCosts) {
 }
 
 
-function reduceAmount(i, amount) {
-    if (amount >= 1) {
-        basket_amounts[i]--;
-    } else {
-        basket_dishes.splice(i, 1);
-        basket_prices.splice(i, 1);
-        basket_amounts.splice(i, 1);
-    }
-    renderFullBasket();
-}
-
-
 function renderFullBasket() {
-    renderBasket();
-    renderBasketItems();
-    renderBasketCosts();
-    checkCheckout();
-    mobileCheckoutButton();
+
+    if (basket_dishes.length >= 1) {
+        renderBasket();
+        renderBasketItems();
+        renderBasketCosts();
+        checkCheckout();
+        mobileCheckoutButton();
+
+    } else {
+        renderEmptyBasket();
+    }
 }
 
 
@@ -204,7 +225,7 @@ function checkCheckout() {
     checkout = document.getElementById('checkout-btn');
     let sum = subTotal() + deliveryCosts;
 
-    if (sum >= 15) {
+    if (sum >= deliveryCostsMin) {
         checkoutMobile.style.backgroundColor = "#FF8000";
         checkoutMobile.style.color = "white";
 

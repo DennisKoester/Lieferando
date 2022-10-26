@@ -19,15 +19,30 @@
 
     <script src="script.js"></script>
 
+    <style>
+        .dataprotection {
+            margin: 15px;
+            word-wrap: break-word;
+        }
+
+        h1 {
+            margin-bottom: 15px;
+        }
+
+        h2 {
+            margin: 35px 0 15px 0;
+        }
+    </style>
+
 </head>
 
 
 
 <body onload="init()">
 
-    <header>
-        <div w3-include-html="templates/header.html"></div>
-    </header>
+
+    <div w3-include-html="templates/header.html"></div>
+
 
     <div class="dataprotection">
         <h1>Datenschutzerklärung</h1>
@@ -128,9 +143,9 @@
                     rel="noopener">externe Datenschutzbeauftragte</a> (Version #2020-09-30).</em></p>
     </div>
 
-    <footer>
-        <div w3-include-html="templates/footer.html"></div>
-    </footer>
+
+    <div w3-include-html="templates/footer.html"></div>
+
 </body>
 
 </html>

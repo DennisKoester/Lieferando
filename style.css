@@ -511,7 +511,7 @@ header {
 .footer-links ul li {
     display: inline-block;
     font-size: 14px;
-    margin: 0 15px 0 15px;
+    margin: 0 15px 10px 15px;
     cursor: pointer;
 }
 
