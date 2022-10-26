@@ -244,6 +244,17 @@ function renderCheckout() {
     }
 }
 
+function openMobileBasket() {
+    let mobileBasket = document.getElementById('basket');
+    mobileBasket.style.display = ("block");
+
+}
+
+function closeMobileBasket() {
+    let mobileBasket = document.getElementById('basket');
+    mobileBasket.style.display = ("none");
+}
+
 
 // Slide-Bar Active
 

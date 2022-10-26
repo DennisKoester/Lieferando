@@ -119,6 +119,7 @@ function emptyBasketHTML() {
                 <img class="basket-logo" src="img/icons8-fast-food-64.png" alt="Logo">
                 <h2>Fill Your Food Cart</h2>
                 <p>Your basket is empty<p>
+                <div class="closeButton d-none" onclick="closeMobileBasket()"><img src="img/close.gif" alt="Close Button"></div>
             </div>
     `;
 }
@@ -130,6 +131,7 @@ function fullBasketHTML() {
                 <div id="items-list" class="list-item"></div>
                 <div id="basket-costs" class="basket-costs"></div>
                 <div id="checkout-btn" class="checkout-btn">Checkout (${totalSum(subTotal(), deliveryCosts).toFixed(2).replace('.', ',')} €)</div>
+                <div class="closeButton d-none" onclick="closeMobileBasket()"><img src="img/close.gif" alt="Close Button"></div>
             </div>
             `;
 }
