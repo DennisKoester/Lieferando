@@ -7,7 +7,9 @@ function donerHTMLTemplate(dishName, ingredients, pricePerAmount) {
         <div class="dish">
             <div class="dish-name">
                 <h4>${dishName}</h4>
-                <a href="">Product Info</a>
+                <span class="material-symbols-outlined" style="color: #FF8000;">
+                    info
+                </span>
             </div>
                 <div class="ingredients">${ingredients}</div>
                 <div class="dish-price">${pricePerAmount.toFixed(2).replace('.', ',')} €</div>
@@ -27,7 +29,9 @@ function lahmacunHTMLTemplate(dishName, ingredients, pricePerAmount) {
         <div class="dish">
             <div class="dish-name">
                 <h4>${dishName}</h4>
-                <a href="">Product Info</a>
+                <span class="material-symbols-outlined" style="color: #FF8000;">
+                    info
+                </span>
             </div>
                 <div class="ingredients">${ingredients}</div>
                 <div class="dish-price">${pricePerAmount.toFixed(2).replace('.', ',')} €</div>
@@ -47,7 +51,9 @@ function pideHTMLTemplate(dishName, ingredients, pricePerAmount) {
         <div class="dish">
             <div class="dish-name">
                 <h4>${dishName}</h4>
-                <a href="">Product Info</a>
+                <span class="material-symbols-outlined" style="color: #FF8000;">
+                    info
+                </span>
             </div>
                 <div class="ingredients">${ingredients}</div>
                 <div class="dish-price">${pricePerAmount.toFixed(2).replace('.', ',')} €</div>
@@ -67,7 +73,9 @@ function burgerHTMLTemplate(dishName, ingredients, pricePerAmount) {
         <div class="dish">
             <div class="dish-name">
                 <h4>${dishName}</h4>
-                <a href="">Product Info</a>
+                <span class="material-symbols-outlined" style="color: #FF8000;">
+                    info
+                </span>
             </div>
             <div class="ingredients">${ingredients}</div>
             <div class="dish-price">${pricePerAmount.toFixed(2).replace('.', ',')} €</div>
@@ -87,7 +95,9 @@ function saladHTMLTemplate(dishName, ingredients, pricePerAmount) {
         <div class="dish">
             <div class="dish-name">
                 <h4>${dishName}</h4>
-                <a href="">Product Info</a>
+                <span class="material-symbols-outlined" style="color: #FF8000;">
+                    info
+                </span>
             </div>
                 <div class="ingredients">${ingredients}</div>
                 <div class="dish-price">${pricePerAmount.toFixed(2).replace('.', ',')} €</div>
