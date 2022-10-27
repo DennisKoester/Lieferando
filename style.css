@@ -162,6 +162,11 @@ header {
     gap: 8px;
 }
 
+.liked {
+    color: red;
+    fill: red;
+}
+
 .btn {
     display: flex;
     justify-content: center;
@@ -559,6 +564,19 @@ header {
         cursor: pointer;
     }
 
+    .deleteButton {
+        display: block;
+        position: absolute;
+        top: 15px;
+        left: 15px;
+    }
+
+    .deleteButton img {
+        height: 25px;
+        width: 25px;
+        cursor: pointer;
+    }
+
     .checkout-btn {
         background-color: #E5E3E1;
     }
@@ -621,6 +639,19 @@ header {
 
     .checkout-mobile {
         display: none;
+    }
+
+    .deleteButton {
+        display: block;
+        position: absolute;
+        top: 25px;
+        left: 15px;
+    }
+
+    .deleteButton img {
+        height: 25px;
+        width: 25px;
+        cursor: pointer;
     }
 }
 

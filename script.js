@@ -12,6 +12,7 @@ async function includeHTML() {
     }
 }
 
+
 async function init() {
     await includeHTML();
     renderAllDishes();
@@ -232,7 +233,6 @@ function mobileCheckoutButton() {
 }
 
 
-
 function renderCheckout() {
     checkoutMobile = document.getElementById('checkout-mobile');
     checkout = document.getElementById('checkout-btn');
@@ -251,15 +251,23 @@ function renderCheckout() {
     }
 }
 
+
 function openMobileBasket() {
     let mobileBasket = document.getElementById('basket');
     mobileBasket.style.display = ("block");
 
 }
 
+
 function closeMobileBasket() {
     let mobileBasket = document.getElementById('basket');
     mobileBasket.style.display = ("none");
+}
+
+
+function giveLike() {
+    let like = document.getElementById('like-btn');
+    like.classList.toggle("liked");
 }
 
 
