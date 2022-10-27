@@ -337,6 +337,7 @@ header {
 /* Basket */
 
 .basket {
+    display: block !important;
     position: sticky;
     top: -10px;
     right: 0;
@@ -532,7 +533,7 @@ header {
 @media (max-width: 980px) {
 
     .basket {
-        display: none;
+        display: none !important;
         position: fixed;
         top: 50%;
         left: 50%;
@@ -632,6 +633,11 @@ header {
 
     .basket-costs {
         font-size: 15px;
+    }
+
+    .footer-container {
+        height: 100% !important;
+        padding: 10px;
     }
 }
 

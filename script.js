@@ -80,7 +80,6 @@ function renderBurger() {
         let pricePerAmount = burger[i]['price'];
 
         burgerDishes.innerHTML += burgerHTMLTemplate(dishName, ingredients, pricePerAmount);
-
     }
 }
 
@@ -198,6 +197,7 @@ function totalSum(subTotal, deliveryCosts) {
     return total;
 }
 
+
 function calcDeliveryMinCosts() {
     let calcDeliveryMinCosts = deliveryCostsMin - subTotal();
 
@@ -221,22 +221,21 @@ function renderFullBasket() {
 }
 
 
-function mobileCheckoutButton() {
-    let mobileCheckoutBtn = document.getElementById('checkout-mobile');
-    mobileCheckoutBtn.innerHTML = mobileCheckoutButtonHTML();
+function deleteBasket() {
 
-    if (basket_dishes.length >= 1) {
-        mobileCheckoutBtn.classList.remove("d-none");
-    } else {
-        mobileCheckoutBtn.classList.add("d-none");
-    }
+    basket_dishes = [];
+    basket_prices = [];
+    basket_amounts = [];
+
+    renderEmptyBasket();
+    mobileCheckoutButton();
 }
 
 
 function renderCheckout() {
-    checkoutMobile = document.getElementById('checkout-mobile');
-    checkout = document.getElementById('checkout-btn');
-    freedelivery = document.getElementById('delvierCostsMin');
+    let checkoutMobile = document.getElementById('checkout-mobile');
+    let checkout = document.getElementById('checkout-btn');
+    let freedelivery = document.getElementById('delvierCostsMin');
     let sum = subTotal() + deliveryCosts;
 
     if (sum >= deliveryCostsMin) {
@@ -252,15 +251,39 @@ function renderCheckout() {
 }
 
 
+function mobileCheckoutButton() {
+    let mobileCheckoutBtn = document.getElementById('checkout-mobile');
+
+    mobileCheckoutBtn.innerHTML = '';
+    mobileCheckoutBtn.innerHTML = mobileCheckoutButtonHTML();
+
+    if (basket_dishes.length >= 1) {
+        mobileCheckoutBtn.classList.remove("d-none");
+    } else {
+        mobileCheckoutBtn.classList.add("d-none");
+    }
+}
+
+
+/* $(window).resize(function () {
+    let mobileBasket = document.getElementById('basket');
+    if ($(window).width() > 981) {
+
+        mobileBasket.style.display = ("block");
+    }
+}); */
+
+
 function openMobileBasket() {
     let mobileBasket = document.getElementById('basket');
-    mobileBasket.style.display = ("block");
 
+    mobileBasket.style.setProperty("display", "block", "important");
 }
 
 
 function closeMobileBasket() {
     let mobileBasket = document.getElementById('basket');
+
     mobileBasket.style.display = ("none");
 }
 
