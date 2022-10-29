@@ -2,7 +2,7 @@ async function includeHTML() {
     let includeElements = document.querySelectorAll('[w3-include-html]');
     for (let i = 0; i < includeElements.length; i++) {
         const element = includeElements[i];
-        file = element.getAttribute("w3-include-html"); // "includes/header.html"
+        file = element.getAttribute("w3-include-html");
         let resp = await fetch(file);
         if (resp.ok) {
             element.innerHTML = await resp.text();
@@ -27,9 +27,7 @@ function renderAllDishes() {
     renderSalad();
     renderBurger();
 }
-
-
-// TODO Shorten this up + HTML Templates
+// Render dish categorys
 
 function renderDoner() {
 
@@ -98,7 +96,6 @@ function renderSalad() {
 }
 
 // Basket
-
 
 let basket_dishes = [];
 let basket_prices = [];
@@ -241,12 +238,14 @@ function renderCheckout() {
     if (sum >= deliveryCostsMin) {
         checkoutMobile.style.backgroundColor = "#FF8000";
         checkoutMobile.style.color = "white";
-
         checkout.style.backgroundColor = "#FF8000";
         checkout.style.color = "white";
         checkout.style.cursor = "pointer";
         checkout.onclick = function () { alert('Test Site'); };
         freedelivery.classList.add("d-none");
+    } else {
+        checkoutMobile.style.backgroundColor = "#E5E3E1";
+        checkoutMobile.style.color = "gray";
     }
 }
 
@@ -263,15 +262,6 @@ function mobileCheckoutButton() {
         mobileCheckoutBtn.classList.add("d-none");
     }
 }
-
-
-/* $(window).resize(function () {
-    let mobileBasket = document.getElementById('basket');
-    if ($(window).width() > 981) {
-
-        mobileBasket.style.display = ("block");
-    }
-}); */
 
 
 function openMobileBasket() {
@@ -292,15 +282,3 @@ function giveLike() {
     let like = document.getElementById('like-btn');
     like.classList.toggle("liked");
 }
-
-
-// Slide-Bar Active
-
-// function setActive() {
-//     let activeLink = document.getElementById('menu-slider').getElementsByTagName('a');
-//     for (let i = 0; i < activeLink.length; i++) {
-//         if (document.location.href.indexOf(activeLink[i].href) >= 0) {
-//             activeLink[i].classList.add("active");
-//         }
-//     }
-// }
