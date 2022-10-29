@@ -659,13 +659,29 @@
     }
 }
 
-@media (hover: hover) {
+@media (hover: none) {
 
     .btn-gray:hover {
-        background: #EBE9E8;
+        background-color: #F5F5F5;
     }
 
-    .btn:hover {
-        background: #EBE9E8;
+    .address-container:hover {
+        background-color: #F5F5F5;
+    }
+
+    .burger-btn:hover {
+        background-color: inherit;
+    }
+
+    .search-btn:hover {
+        background-color: #F5F5F5;
+    }
+
+    .dish-container:hover {
+        background-color: inherit;
+    }
+
+    .dish-variation:hover {
+        background-color: inherit;
     }
 }
