@@ -12,7 +12,7 @@
 
 /* Header */
 
-header {
+.header-container {
     background-color: white;
     color: black;
     height: 75px;
@@ -80,7 +80,6 @@ header {
     display: flex;
     justify-content: flex-end;
     align-items: center;
-    /* padding-right: 20px; */
     gap: 8px;
 }
 
@@ -543,7 +542,6 @@ header {
         height: auto !important;
         background-color: #EFEDE9;
         border-radius: 25px;
-        /* border: 15px solid #EFEDE9; */
         padding: 10px;
         overflow-x: scroll;
         -ms-overflow-style: none;

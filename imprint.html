@@ -21,8 +21,9 @@
 
     <style>
         footer {
-            position: absolute;
-            bottom: 0;
+            margin-top: auto;
+            width: 100%;
+            max-height: 150px;
         }
 
         .imprint {
@@ -39,9 +40,9 @@
 
 <body onload="init()">
 
-
-    <div w3-include-html="templates/header.html"></div>
-
+    <header>
+        <div w3-include-html="templates/header.html"></div>
+    </header>
 
     <div class='imprint'>
         <h1>Impressum</h1>
@@ -72,7 +73,9 @@
 
     </div>
 
-    <div class="footer" w3-include-html="templates/footer.html"></div>
+    <footer>
+        <div w3-include-html="templates/footer.html"></div>
+    </footer>
 
 
 </body>
