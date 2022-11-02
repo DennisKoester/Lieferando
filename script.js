@@ -1,3 +1,8 @@
+let basket_dishes = [];
+let basket_prices = [];
+let basket_amounts = [];
+
+
 async function includeHTML() {
     let includeElements = document.querySelectorAll('[w3-include-html]');
     for (let i = 0; i < includeElements.length; i++) {
@@ -96,11 +101,6 @@ function renderSalad() {
 }
 
 // Basket
-
-let basket_dishes = [];
-let basket_prices = [];
-let basket_amounts = [];
-
 
 function renderEmptyBasket() {
     let emptyBasket = document.getElementById('basket');
@@ -241,7 +241,7 @@ function renderCheckout() {
         checkout.style.backgroundColor = "#FF8000";
         checkout.style.color = "white";
         checkout.style.cursor = "pointer";
-        checkout.onclick = function () { alert('Test Site'); };
+        checkout.onclick = () => alert('Test Site');
         freedelivery.classList.add("d-none");
     } else {
         checkoutMobile.style.backgroundColor = "#E5E3E1";
